@@ -1,4 +1,14 @@
+import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
+
 function Dashboard() {
+  const colleges = JSON.parse(localStorage.getItem("colleges") || "[]");
+const deadlines = JSON.parse(localStorage.getItem("deadlines") || "[]");
+const achievements = JSON.parse(localStorage.getItem("achievements") || "[]");
+const essays = JSON.parse(localStorage.getItem("essays") || "[]");
+const applications = JSON.parse(localStorage.getItem("applications") || "[]");
+const tests = JSON.parse(localStorage.getItem("tests") || "[]");
+  const navigate = useNavigate()
     return (
       <div className="dashboard">
       <h1>Welcome back!</h1>
@@ -7,17 +17,17 @@ function Dashboard() {
       <div className="dashboard-cards">
         <div className="dashboard-card">
           <h2>My Colleges</h2>
-          <p>0</p>
+          <p>{colleges.length}</p>
         </div>
 
         <div className="dashboard-card">
           <h2>Upcoming Deadlines</h2>
-          <p>0</p>
+          <p>{deadlines.length}</p>
         </div>
 
         <div className="dashboard-card">
           <h2>Applications</h2>
-          <p>0</p>
+          <p>{achievements.length}</p>
         </div>
       </div>
 
@@ -25,25 +35,23 @@ function Dashboard() {
   <h2>Quick Actions</h2>
 
   <div className="action-buttons">
-    <button>Add College</button>
-    <button>Add Achievement</button>
-    <button>Add Deadline</button>
-    <button>Start an Essay</button>
+    <button onClick={() => navigate("/colleges")}>Add College</button>
+    <button onClick={() => navigate("/achievements")}>Add Achievement</button>
+    <button onClick={() => navigate("/deadlines")}>Add Deadline</button>
+    <button onClick={() => navigate("/essays")}>Start an Essay</button>
   </div>
 </div>
 
       <div className="dashboard-section">
   <h2>Upcoming Deadlines</h2>
 
-    <div className="deadline-item">
-      <span>Common App</span>
-      <span>November 1</span>
-    </div>
+    {deadlines.map((deadline) => 
+    (<div className="deadline-item deadline-card" key={deadline.name}>
+      <span>{deadline.name}</span>
+      <span>{deadline.date}</span>
+    </div>)
+    )}
 
-  <div className="deadline-item">
-        <span>Early Action</span>
-        <span>November 1</span>
-      </div>
     </div>
   </div>
   );
