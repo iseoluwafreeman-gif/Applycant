@@ -16,7 +16,7 @@ const resources = [
     description:
       "Practice for the SAT with lessons, practice questions, and personalized study tools.",
     provider: "Khan Academy",
-    url: "https://www.khanacademy.org/test-prep/sat",
+    url: "https://www.khanacademy.org/test-prep",
     icon: BookOpen
   },
   {
