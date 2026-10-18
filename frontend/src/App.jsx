@@ -10,6 +10,7 @@ import Layout from "./components/layouts/Layout";
 import Achievements from "./pages/Achievements";
 import Application from "./pages/Application";
 import Testing from "./pages/Testing";
+import Resources from "./pages/Resources";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/application" element={<Application />} />
           <Route path="/testing" element={<Testing />} />
+          <Route path="/resources" element={<Resources />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 :root {
   --primary: #2563eb;
   --primary-light: #eff6ff;
@@ -443,4 +445,227 @@ body {
   border: 1px solid var(--border);
   border-radius: 6px;
   font-size: 14px;
+}
+
+.resources-page {
+  width: 100%;
+  padding-bottom: 32px;
+}
+
+.resources-page .page-header {
+  margin-bottom: 24px;
+}
+
+.resources-page .page-header p {
+  margin-top: 8px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.resources-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  background: var(--card-background, #ffffff);
+  color: var(--text-secondary, #6b7280);
+}
+
+.resources-search input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.resources-search:focus-within {
+  border-color: var(--primary-color, #4f46e5);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.resource-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.resource-filter {
+  padding: 8px 14px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 999px;
+  background: var(--card-background, #ffffff);
+  color: var(--text-color, #374151);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.resource-filter:hover {
+  border-color: var(--primary-color, #4f46e5);
+}
+
+.resource-filter.active {
+  background: var(--primary-color, #4f46e5);
+  border-color: var(--primary-color, #4f46e5);
+  color: #ffffff;
+}
+
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 16px;
+  background: var(--card-background, #ffffff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.resource-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.resource-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--primary-light, #eef2ff);
+  color: var(--primary-color, #4f46e5);
+}
+
+.resource-category {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: var(--background-color, #f3f4f6);
+  color: var(--text-secondary, #6b7280);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.resource-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--text-color, #111827);
+}
+
+.resource-card > p {
+  margin: 0 0 22px;
+  color: var(--text-secondary, #6b7280);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.resource-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+}
+
+.resource-card-footer > span {
+  color: var(--text-secondary, #6b7280);
+  font-size: 0.85rem;
+}
+
+.resource-card-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary-color, #4f46e5);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.resource-card-footer a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 800px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .resource-card {
+    padding: 17px;
+  }
+
+  .resource-card-top {
+    align-items: flex-start;
+  }
+
+  .resource-card-footer {
+    flex-wrap: wrap;
+  }
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+label {
+  font-family: 'Lato', sans-serif;
 }

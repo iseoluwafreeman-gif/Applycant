@@ -5,7 +5,8 @@ import { LayoutDashboard,
   FileText,
   Calendar,
   ClipboardList,
-FlaskConical } from "lucide-react";
+FlaskConical,
+BookOpenText } from "lucide-react";
 function Sidebar() {
   const links = [
     { name: "Dashboard", path: "/dashboard", icon: <LayoutDashboard size={20}/>  },
@@ -15,6 +16,7 @@ function Sidebar() {
     { name: "Achievements", path: "/achievements", icon: <Trophy size={20}/>  },
     { name: "Application", path: "/application", icon: <ClipboardList size={20}/>  },
     { name: "Testing", path: "/testing", icon: <FlaskConical size={20}/>  },
+    { name: "Resources", path: "/resources", icon: <BookOpenText size={20}/>  },
   ];
 
   return (
