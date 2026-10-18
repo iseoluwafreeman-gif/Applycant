@@ -197,7 +197,7 @@ const prioritizedApplications = applications
   <p>Focus on the tasks that need your attention first.</p>
 
   {priorityTasks.length === 0 ? (
-    <p>You're all caught up! 🎉</p>
+    <p>You're all caught up! </p>
   ) : (
     priorityTasks.map((task, index) => {
       const daysUntil = task.deadline
